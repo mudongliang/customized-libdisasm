@@ -1459,7 +1459,7 @@ static ia32_insn_t tbl_0F01[] = {	/* Group 7 */
 	 { 0,   INS_SYSTEM,  0,   ADDRMETH_M | OPTYPE_none | OP_R,   ARG_NONE,   ARG_NONE,   cpu_80486 | isa_GP,   "invlpg", "",   0,   0,   0,  0 , 0 },
 	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
 	 { idx_0F0111,  0,   0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
-	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { idx_0F0112,  0,   0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
 	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
 	 { 0,   INS_SYSTEM,  0,   ADDRMETH_E | OPTYPE_w | OP_W,   ARG_NONE,   ARG_NONE,   cpu_80386 | isa_GP,   "smsw", "",   0,   0,   0,  0 , 47 },
 	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
@@ -1470,7 +1470,24 @@ static ia32_insn_t tbl_0F01[] = {	/* Group 7 */
 
 static ia32_insn_t tbl_0F0111[] = {	/* Monitor/MWait opcode */
 	 { 0, INS_SYSTEM,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "monitor", "", 0, 0, 0, 0, 54 },
-	 { 0, INS_SYSTEM,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "mwait", "", 0, 0, 0, 0, 55 }
+	 { 0, INS_SYSTEM,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "mwait", "", 0, 0, 0, 0, 55 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 }
+};
+
+static ia32_insn_t tbl_0F0112[] = {	/* Monitor/MWait opcode */
+	 { 0, INS_SYSTEM,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "xgetbv", "", 0, 0, 0, 0, 54 },
+	 { 0, INS_SYSTEM,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "xsetbv", "", 0, 0, 0, 0, 55 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 },
+	 { 0, INS_INVALID,  0,   ARG_NONE,   ARG_NONE,   ARG_NONE,   0,   "", "",   0,   0,   0,  0 , 0 }
 };
 
 
@@ -2964,7 +2981,7 @@ ia32_table_desc_t ia32_tables[] = {
 	{ tbl_0F00, tbl_extension, 0x03, 0x07, 0x00, 0x07 },
 	{ tbl_0F01, tbl_extension, 0x03, 0x1F, 0x00, 0x1F },
 	/* 10 */
-	{ tbl_0F0111, tbl_ext_ext, 0x00, 0x01, 0x00, 0x01 },
+	{ tbl_0F0111, tbl_ext_ext, 0x00, 0x07, 0x00, 0x07 },
 	{ tbl_0F12, tbl_extension, 0x06, 0x03, 0x00, 0x03 },
 	{ tbl_0F16, tbl_extension, 0x06, 0x03, 0x00, 0x03 },
 	{ tbl_0F18, tbl_extension, 0x03, 0x1F, 0x00, 0x13 },
@@ -3020,7 +3037,8 @@ ia32_table_desc_t ia32_tables[] = {
 	/* 55 */
 	{ tbl_DFC0, tbl_fpu_ext, 0x00, 0xFF, 0xC0, 0xFF },
 	{ tbl_0F0F, tbl_suffix, 0x00, 0xFF, 0x00, 0xBF },
-	{ tbl_660F38, tbl_prefix, 0x00, 0xFF, 0x00, 0x81 }
+	{ tbl_660F38, tbl_prefix, 0x00, 0xFF, 0x00, 0x81 },
+	{ tbl_0F0112, tbl_ext_ext, 0x00, 0x07, 0x00, 0x07 }
 };
 /* ia32_opcode_tables.h */
 /* Table index constants: 
