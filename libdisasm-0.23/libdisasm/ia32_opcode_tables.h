@@ -56,4 +56,5 @@
 #define idx_DFC0 55
 #define idx_0F0F 56
 #define idx_660F38 57
-#define idx_0F0112 58
+#define idx_660F3A 58
+#define idx_0F0112 59
