@@ -2829,7 +2829,7 @@ static ia32_insn_t tbl_0F0F[] = {	/* 3D Now! 0F Suffix */
 
 //supprt for SSE instructions, e.g., ptest
 static ia32_insn_t tbl_660F38[] = {
-	{ 0, INS_UNKNOWN,  0, ADDRMETH_V | OPTYPE_dq | OP_R, ADDRMETH_W | OPTYPE_dq | OP_R, cpu_PENTIUM4 | isa_GP, "pshufb", "", 0, 0, 0, 0, 0 },
+	{ 0, INS_UNKNOWN,  0, ADDRMETH_V | OPTYPE_dq | OP_R, ADDRMETH_W | OPTYPE_dq | OP_R, ARG_NONE, cpu_PENTIUM4 | isa_GP, "pshufb", "", 0, 0, 0, 0, 0 },
 	{ 0, INS_INVALID,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "", "", 0, 0, 0, 0, 0 },	
 	{ 0, INS_INVALID,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "", "", 0, 0, 0, 0, 0 },	
 	{ 0, INS_INVALID,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "", "", 0, 0, 0, 0, 0 },	
