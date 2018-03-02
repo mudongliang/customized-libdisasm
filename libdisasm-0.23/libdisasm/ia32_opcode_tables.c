@@ -3068,8 +3068,9 @@ static ia32_insn_t tbl_660F3A[] = {
 	{ 0, INS_INVALID,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "", "", 0, 0, 0, 0, 0 },	
 	{ 0, INS_INVALID,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "", "", 0, 0, 0, 0, 0 },	
 	{ 0, INS_INVALID,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "", "", 0, 0, 0, 0, 0 },	
-	{ 0, INS_INVALID,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "", "", 0, 0, 0, 0, 0 },	
-	{ 0, INS_INVALID,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "", "", 0, 0, 0, 0, 0 }
+	{ 0, INS_INVALID,  0, ARG_NONE, ARG_NONE, ARG_NONE, cpu_PENTIUM4 | isa_GP, "", "", 0, 0, 0, 0, 0 },
+
+	{ 0, INS_UNKNOWN,  0, ADDRMETH_V | OPTYPE_dq | OP_R, ADDRMETH_W | OPTYPE_dq | OP_R, ADDRMETH_I | OPTYPE_b | OP_R, cpu_PENTIUM4 | isa_GP, "pcmpistri", "", 0, 0, 0, 0, 0 },
 };
 
 
